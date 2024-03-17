@@ -66,3 +66,12 @@
     width: 200px;
     height: 400px;
 }
+
+.details{
+    margin-top: 10px;
+    border: 1px solid black;
+}
+
+.details > img{
+    width: 80px;
+}

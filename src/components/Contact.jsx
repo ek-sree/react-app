@@ -1,7 +1,8 @@
-const Contant=()=>{
+import ContactClass from "./ContactClass";
+const Contact=()=>{
     return(
-        <div><h1>Contact</h1></div>
+        <div><ContactClass name={"Sreehari E K"} Location={"Kerala"} Info={"eksree05@gmail.com"}/></div>
     )
 }
 
-export default Contant;
+export default Contact;

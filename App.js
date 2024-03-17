@@ -5,8 +5,8 @@ import Body from "./src/components/Body";
 import {createBrowserRouter, RouterProvider,Outlet} from "react-router-dom"
 import About from "./src/components/About";
 import Error from "./src/components/Error";
-import Contant from "./src/components/contact";
 import ResturantInfo from "./src/components/ResturantInfo";
+import Contact from "./src/components/Contact"
 
 
 const App = () => {
@@ -33,7 +33,7 @@ const appRouter = createBrowserRouter([
       },
       {
         path:"/contact",
-        element:<Contant/>
+        element:<Contact/>
       },
       {
         path:"/resturant/:resId",
