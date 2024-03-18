@@ -1,10 +1,14 @@
 import { useState } from "react";
 import { LOGO_URL } from "./utils/contants";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../customHooks/useOnlineStatus";
+
 
 const Header = () => {
 
   const [btnChange,setbtnChange] =useState("Login")
+
+  const online =useOnlineStatus()
 
   const handlechange=()=>{
     btnChange ==='Login' ? setbtnChange("Logout") : setbtnChange("Login")
@@ -20,6 +24,7 @@ const Header = () => {
         </div>
         <div className="nav-items">
           <ul>
+          <li>Online status : {online ? "✅" : "❌"}</li>
             <li><Link to="/">HOME</Link></li>
             <li><Link to="/about">ABOUT US</Link></li>
             <li><Link to="/contact">CONTACT US</Link></li>

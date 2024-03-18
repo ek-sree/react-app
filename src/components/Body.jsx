@@ -3,6 +3,7 @@ import { useState , useEffect} from "react";
 import axios from "axios";
 import Shimmer from "./shimmer";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../customHooks/useOnlineStatus";
 
 const Body = () => {
 
@@ -37,6 +38,14 @@ const Body = () => {
     setlistData(ogData)
     setfiltered(ogData)
 };
+
+const online = useOnlineStatus()
+
+if(online===false){
+  return(
+    <h1>Opps..Looks like there is no internet connection..!!!</h1>
+  )
+}
 
     return listData.length==0 ? <Shimmer/>:(
       <div className="body">
