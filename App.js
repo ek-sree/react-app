@@ -31,11 +31,11 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "/grocery",
-        element: (
+        element: 
           <Suspense fallback={<Shimmer />}>
             <Grocery />
           </Suspense>
-        ),
+        
       },
       {
         path: "/about",

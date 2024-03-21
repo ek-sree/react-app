@@ -1,7 +1,7 @@
 import ResturantCard from "./ResturantCard";
 import { useState , useEffect} from "react";
 import axios from "axios";
-import Shimmer from "./shimmer";
+import Shimmer from "./shimmer"
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../customHooks/useOnlineStatus";
 
@@ -50,14 +50,14 @@ if(online===false){
     return listData.length==0 ? <Shimmer/>:(
       <div className="body">
         <div className="filter">
-          <input type="text" value={searchText} onChange={handleChange} />
-          <button onClick={handleSearch}>Search</button>
-          <button className="filter-btn" onClick={()=>{
+          <input className="border mt-10  ml-20 mb-8  py-1 border-black rounded-md w-[250px]" type="text" value={searchText} onChange={handleChange} placeholder="Type search your favourite foods"/>
+          <button className="border border-black rounded-lg py-1 px-2 bg-slate-200 hover:bg-slate-600 hover:text-white" onClick={handleSearch}>Search</button>
+          <button className="ml-[100px] border border-black py-1 px-2 rounded-md bg-slate-200 hover:bg-slate-600 hover:text-white" onClick={()=>{
             const filteredData = listData.filter((res)=>res.info.avgRating > 4.3)
             setfiltered(filteredData)
           }}>Top Rated Resturant</button>
         </div>
-        <div className="res-container">
+        <div className="flex flex-wrap">
           {filtered.map((resturant) => {
             return <Link key={resturant.info.id} to={"/resturant/"+resturant.info.id}><ResturantCard  resData={resturant} /></Link>;
           })}
