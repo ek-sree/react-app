@@ -16,7 +16,6 @@ class ContactClass extends React.Component{
     async componentDidMount(){
         const response = await fetch("https://api.github.com/users/ek-sree")
         const data = await response.json()
-        console.log(data);
 
         this.setState({
             userInfo:data

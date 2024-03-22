@@ -2,7 +2,6 @@ import { CDN_URL } from "./utils/contants";
 
 const ResturantCard = (props) => {
   const { resData } = props;
-  console.log(resData);
   const { name, cuisines, areaName, costForTwo, avgRating, cloudinaryImageId } =
     props.resData.info;
   return (
@@ -22,16 +21,17 @@ const ResturantCard = (props) => {
   );
 };
 
-
-export const ResturantWithPromoted=()=>{
-  return()=>{
-    return(
+export const Veg = (ResturantCard) => {
+  return (props) => {
+    return (
       <div>
-        <label>Promoted</label>
-        <ResturantCard/>
+        <label className="border border-gray-500 bg-green-600 text-white px-1 py-1 rounded-full absolute ml-[40px] mb-12 z-20 ">
+          Veg
+        </label>
+        <ResturantCard {...props} />
       </div>
-    )
-  }
-}
+    );
+  };
+};
 
 export default ResturantCard;
