@@ -16,9 +16,9 @@ function ResturantInfo() {
   }
   const { name, cuisines, costForTwoMessage } =
     resInfo?.data?.data?.cards[0]?.card?.card?.info || {};
-  const itemCards =
-    resInfo?.data?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]
-      ?.card?.card?.itemCards || [];
+  // const itemCards =
+  //   resInfo?.data?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]
+  //     ?.card?.card?.itemCards || [];
 
   const category =
     resInfo?.data?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(

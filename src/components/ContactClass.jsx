@@ -1,4 +1,5 @@
 import React from "react";
+import { UserContext } from "./utils/userContext";
 
 class ContactClass extends React.Component{
     constructor(props){
@@ -28,6 +29,11 @@ class ContactClass extends React.Component{
         const {count} = this.state;
         return(
             <div>
+                <UserContext.Consumer>
+                    {({loggedInUser})=>(
+                        <h1>{loggedInUser}</h1>
+                    )}
+                </UserContext.Consumer>
                 <h1>Members: {count}</h1>
                 <button onClick={()=>{
                     this.setState({

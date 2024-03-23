@@ -1,9 +1,9 @@
 import { FaAngleDown } from "react-icons/fa6";
 import CategoryItems from "./CategoryItems";
-import { useState } from "react";
 
 const ResturantCategory = ({ categoryData ,showIndex, setshowIndex}) => {
 
+  const showAddButton = true
 
     const handleClick=()=>{
         setshowIndex()
@@ -20,7 +20,7 @@ const ResturantCategory = ({ categoryData ,showIndex, setshowIndex}) => {
         <span className="flex justify-end">
           <FaAngleDown />
         </span>
-        {showIndex && <CategoryItems items={categoryData.itemCards} />}
+        {showIndex && <CategoryItems items={categoryData.itemCards} showAddButton={true}/>}
       </div>
     </div>
   );
